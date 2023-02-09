@@ -1,0 +1,30 @@
+
+<div class="container py-2"> 
+<h1 class="text-muted">New Article</h1>
+<hr>
+<%= form_with model: @article do |form| %>
+    <div class="form-group">
+      <%= form.label :title ,:class=>"form-label" %>
+      <%= form.text_field :title , :class=>"form-control" %>
+      <span class="d-block small text-danger">
+      <% @article.errors.full_messages_for(:title).each do |message|%>
+          <%=message%>
+      <%end%>
+    </span>
+    </div>
+  
+    <div>   
+      <%= form.label :body %>
+      <%= form.text_area :body ,:class=>"form-control mb-2"%>
+      <span class="d-block text-danger small">
+        <%@article.errors.full_messages_for(:body).each do |message| %> 
+            <%=message%>
+            <%end%>
+      </span>
+    </div>
+  
+    <div>
+      <%= form.submit :class=>"btn btn-primary"%>
+    </div>
+  <% end %>
+</div>
