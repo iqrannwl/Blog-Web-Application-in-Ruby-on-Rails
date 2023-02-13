@@ -27,3 +27,7 @@
     text-decoration:none;
  }
 
+ .card{
+   height:300px !important;
+   overflow:auto;
+ }
